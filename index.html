@@ -4,9 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario</title>
 </head>
 <body>
-    <h1>title</h1>
+    <h1>Hej Hej!</h1>
+    <form action="/newaccount" method=post oninput="up2.setCustomValidity(up2.value != up.value ? 'Passwords do not match.' : '')">
+        <p>
+            <label for="t1">First name:</label>
+            <input name=t1 type=tel placeholder="&#x202B;&#1585;&#1602;&#1605; &#1575;&#1604;&#1607;&#1575;&#1578;&#1601; 1&#x202E;">
+            <label for="t2">Second name:</label>
+            <input name=t2 type=tel placeholder="&#x202B;&#1585;&#1602;&#1605; &#1575;&#1604;&#1607;&#1575;&#1578;&#1601; 2&#x202E;">
+        </p>
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" title='Introduce your name' autocomplete "name"/>
+        </p>
+        <p>
+            <label for="date">Date of birth:</label>
+            <input type="date" name="date" max="2022-03-03" id="date" autocomplete="bday">
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" list=contacts autocomplete="email">
+        </p>
+        <datalist id="contacts">
+            <option value="github@gmail.com">
+            <option value="uma@example.com">
+            <option value="interfaces@hotmail.es">
+            <option value="slavic@putin.donbass">
+           </datalist>
+        <p>
+            <label for="file">Profile image:</label>
+            <input type="file">
+            <input type="image">
+        </p>
+        <p>
+            <label for="month">Departure time:</label>
+            <input type="month" autocomplete="bday-month">
+            <input type="week">
+            <input type="time" step="60" min="8:00" max="20:00" value="12:00">
+        </p>
+        <p>
+            <label for="week">Arrival time:</label>
+            <input type="month" autocomplete="bday-month">
+            <input type="week">
+            <input type="time" step="60" min="8:00" max="20:00" value="12:00">
+        </p>
+        <p>
+            <label for="number">Number of seats:</label>
+            <input type="number">
+        </p>
+        <p>Homepage: <input name=hp type=url list=hpurls></p>
+        <datalist id=hpurls>
+            <option value="https://www.google.com/" label="Google">
+            <option value="https://www.reddit.com/" label="Reddit">
+        </datalist>
+        <p>
+            <label for="password">Introduce current password:</label>
+            <input type="password" autocomplete="current-password">
+        </p>
+        <p>
+            <label for="password">Introduce new password:</label>
+            <input type="password" id="password1" required name=up>
+        </p>
+        <p>
+            <label for="password">Repeat new password:</label>
+            <input type="password" id="password2" name=up2>
+        </p>
+        <p>
+            <label for="radio">Male:</label>
+            <input type="radio">
+            <label for="radio">Female:</label>
+            <input type="radio">
+        </p>
+        <p>
+            <label for="range">Satisfaction:</label>
+            <input type="range">
+        </p>
+        <p>
+            <label for="url">Webpage:</label>
+            <input type="url" id="url" autocomplete="url">
+        </p>
+        <p>
+            <label for="cc-number">Enter your credit card number:</label>
+            <input name="cc-number" id="cc-number" autocomplete="cc-number">
+        </p>
+        <input type="reset">
+        <input type="submit" value="Submit"/>
+    </form>
 </body>
 </html>
