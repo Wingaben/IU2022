@@ -10,10 +10,10 @@
     <h1>Hej Hej!</h1>
     <form action="/newaccount" method=post oninput="up2.setCustomValidity(up2.value != up.value ? 'Passwords do not match.' : '')">
         <p>
-            <label for="t1">First name:</label>
-            <input name=t1 type=tel placeholder="&#x202B;&#1585;&#1602;&#1605; &#1575;&#1604;&#1607;&#1575;&#1578;&#1601; 1&#x202E;">
-            <label for="t2">Second name:</label>
-            <input name=t2 type=tel placeholder="&#x202B;&#1585;&#1602;&#1605; &#1575;&#1604;&#1607;&#1575;&#1578;&#1601; 2&#x202E;">
+            <label for="t1">Telephone #1:</label>
+            <input name=t1 type=tel autocomplete="tel-local-suffix" placeholder="&#x202B;&#1585;&#1602;&#1605; &#1575;&#1604;&#1607;&#1575;&#1578;&#1601; 1&#x202E;">
+            <label for="t2">Telephone #2:</label>
+            <input name=t2 type=tel autocomplete="tel-local-prefix" placeholder="&#x202B;&#1585;&#1602;&#1605; &#1575;&#1604;&#1607;&#1575;&#1578;&#1601; 2&#x202E;">
         </p>
         <p>
             <label for="username">Username:</label>
@@ -54,7 +54,7 @@
             <label for="number">Number of seats:</label>
             <input type="number">
         </p>
-        <p>Homepage: <input name=hp type=url list=hpurls></p>
+        <p>Homepage: <input name=hp type=url list=hpurls autocomplete="url"></p>
         <datalist id=hpurls>
             <option value="https://www.google.com/" label="Google">
             <option value="https://www.reddit.com/" label="Reddit">
