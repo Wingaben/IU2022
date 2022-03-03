@@ -15,6 +15,14 @@
             <label for="t2">Telephone #2:</label>
             <input name=t2 type=tel autocomplete="tel-local-prefix" placeholder="&#x202B;&#1585;&#1602;&#1605; &#1575;&#1604;&#1607;&#1575;&#1578;&#1601; 2&#x202E;">
         </p>
+        <div class="group">
+            <input type="text">
+            <label>Normal</label>
+          </div>
+          <div class="group">
+            <input type="text" required="required">
+            <label>Required</label>
+          </div>
         <p>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" title='Introduce your name' autocomplete "name"/>
@@ -35,21 +43,27 @@
            </datalist>
         <p>
             <label for="file">Profile image:</label>
-            <input type="file">
+            <input type="file" accept=".doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
             <input type="image">
         </p>
-        <p>
-            <label for="month">Departure time:</label>
-            <input type="month" autocomplete="bday-month">
-            <input type="week">
-            <input type="time" step="60" min="8:00" max="20:00" value="12:00">
-        </p>
-        <p>
-            <label for="week">Arrival time:</label>
-            <input type="month" autocomplete="bday-month">
-            <input type="week">
-            <input type="time" step="60" min="8:00" max="20:00" value="12:00">
-        </p>
+        <fieldset>
+            <legend>Origin</legend>
+            <p><label>Airport: <input type=text name=to list=airports></label></p>
+            <p><label>Departure time: <input type=datetime-local name=totime step=3600></label></p>
+           </fieldset>
+           <datalist id=airports>
+            <option value=ATL label="Atlanta">
+            <option value=MEM label="Memphis">
+            <option value=LHR label="London Heathrow">
+            <option value=LAX label="Los Angeles">
+            <option value=FRA label="Frankfurt">
+           </datalist>
+        <fieldset>
+            <legend>Destination</legend>
+           <p><label>Airport: <input type=text name=to list=airports></label></p>
+            <p><label>Arrival time: <input type=datetime-local name=totime step=3600></label></p>
+           </fieldset>
+           
         <p>
             <label for="number">Number of seats:</label>
             <input type="number">
@@ -79,11 +93,30 @@
         </p>
         <p>
             <label for="range">Satisfaction:</label>
-            <input type="range">
+            <input type="range" min="-100" max="100" value="0" step="10" name="power" list="powers">
+            <datalist id="powers">
+                <option value="0">
+                <option value="-80">
+                <option value="80">
+                <option value="++50">
+            </datalist>
+            <input type="range" name="a" list="a-values">
+            <datalist id="a-values">
+                <option value="10" label="Low">
+                <option value="90" label="High">
+            </datalist>
         </p>
         <p>
             <label for="url">Webpage:</label>
-            <input type="url" id="url" autocomplete="url">
+            <input type="url" name="location" list="urls">
+            <datalist id="urls">
+                <option label="MIME: Format of Internet Message Bodies" value="https://tools.ietf.org/html/rfc2045">
+                <option label="HTML" value="https://html.spec.whatwg.org/">
+                <option label="DOM" value="https://dom.spec.whatwg.org/">
+                <option label="Fullscreen" value="https://fullscreen.spec.whatwg.org/">
+                <option label="Media Session" value="https://mediasession.spec.whatwg.org/">
+                <option label="The Single UNIX Specification, Version 3" value="http://www.unix.org/version3/">
+            </datalist>
         </p>
         <p>
             <label for="cc-number">Enter your credit card number:</label>
